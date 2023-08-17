@@ -6,37 +6,46 @@ MoveMatch is an addon designed for Blender that facilitates the synchronization 
 
 ## Table of Contents
 
-1. [Chapter 1](#chapter-1)
-2. [Chapter 2](#chapter-2)
-3. [Chapter 3](#chapter-3)
-... and so on.
+1. [Installation](#Installation)
+2. [How to use](#How to use)
+3. [Concluding Remarks](#Concluding-Remarks)
+4. [License](#License)
+
 
 ---
 
 ## Installation
 
-Brief introduction or summary of what this chapter discusses.
+Requirements
+Blender: This addon is designed for Blender version 3.5.1. Make sure to have this version or newer installed.
+
+FFmpeg: The automatic video processing feature requires FFmpeg to be installed on your system.
 
 ### ffmpeg
 
-Detailed information or points related to Subsection 1.1.
+[Download ffmpeg from official site: ](https://ffmpeg.org/download.html)
 
 ### Blender
 
 Detailed information or points related to Subsection 1.2.
+[Download blender from official site: ](https://www.blender.org/download/)
 
-... and so on.
+
 
 ### MoveMatch - blender addon
 
-Detailed information or points related to Subsection 1.2.
 
-... and so on.
+[Download this addon: ](https://github.com/Rockfella/movematch/archive/refs/heads/main.zip)
 
+Install addon in blender: 
+Blender -> Edit -> Preferences -> Add-ons -> Install -> Find zip file and enable (the left check box)
+
+Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, see MoveMatch tab
 ---
 
 ## How to use
-
+Start by adding your recordings, it can be one large file or multiple smaller ones:
+(https://i.imgur.com/kIuboa7.gifv)
 Brief introduction or summary of what this chapter discusses.
 
 ### Add your recordings
