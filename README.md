@@ -27,7 +27,7 @@ FFmpeg: The automatic video processing feature requires FFmpeg to be installed o
 
 ### Blender
 
-Detailed information or points related to Subsection 1.2.
+
 [Download blender from official site](https://www.blender.org/download/)
 
 
