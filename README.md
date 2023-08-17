@@ -23,12 +23,12 @@ FFmpeg: The automatic video processing feature requires FFmpeg to be installed o
 
 ### ffmpeg
 
-[Download ffmpeg from official site: ](https://ffmpeg.org/download.html)
+[Download ffmpeg from official site](https://ffmpeg.org/download.html)
 
 ### Blender
 
 Detailed information or points related to Subsection 1.2.
-[Download blender from official site: ](https://www.blender.org/download/)
+[Download blender from official site](https://www.blender.org/download/)
 
 
 
@@ -49,18 +49,19 @@ Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, 
 
 Start by adding your recordings, it can be one large file or multiple smaller ones:
 
-Link to gif scene 0...
+[See how](https://i.imgur.com/ssB1Rv3.gif)
 
 
 ### Set Master Clock
 
 After that, set the master clock and move the clips using the Move function. 
 
-[See how](https://i.imgur.com/2u7YDm0.gif)
+[See how](https://i.imgur.com/EtameVt.gif)
+
 
 ### Set Cuts - annotation
 
-Press the Calibration or Scene button
+Press the Calibration or Scene button, make sure that all videos "on each channel" is within the start - end frame of the annotations. Otherwise it will fail to cut the video later on. 
 
 ### Create ffmpeg script and run
 
