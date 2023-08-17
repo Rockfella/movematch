@@ -4,6 +4,40 @@ import bpy
 from bpy.types import Panel
 
 
+class MM_PT_Step5Panel(bpy.types.Panel):
+    bl_label = "Set cuts"
+    bl_idname = "SEQUENCER_PT_step5_panel"
+    bl_space_type = 'SEQUENCE_EDITOR'
+    bl_region_type = 'UI'
+    bl_category = 'MoveMatch'
+
+    def draw(self, context):
+        layout = self.layout
+
+        # Start a new row
+        row = layout.row(align=True)
+
+        # Place the first button in the row
+        row.operator("movematch.new_calibration")
+
+        # Place the second button in the same row
+        row.operator("movematch.new_scene")
+
+class MM_PT_Step4Panel(bpy.types.Panel):
+    bl_label = "Create FFMPEG"
+    bl_idname = "SEQUENCER_PT_step4_panel"
+    bl_space_type = 'SEQUENCE_EDITOR'
+    bl_region_type = 'UI'
+    bl_category = 'MoveMatch'
+
+    def draw(self, context):
+        layout = self.layout
+        scene = context.scene
+        # Place the button in the panel
+        layout.operator("movematch.ffmpeg_create")
+        layout.prop(scene, "mm_ignore_sound", text="Ignore Sound")
+
+
 class MM_PT_Step3Panel(bpy.types.Panel):
     bl_label = "When video clips have been imported"
     bl_idname = "SEQUENCER_PT_step3_panel"
@@ -43,7 +77,7 @@ class MM_PT_Panel(Panel):
             if strip.type == 'TEXT':
                 if strip.name == '@master.time':
 
-                    layout.prop(context.scene, "mm_master_time_adaption", text="Adapt",
+                    layout.prop(context.scene, "mm_master_time_adaption", text="Move to:",
                                 expand=True)
                     row = layout.row()
 
