@@ -43,45 +43,32 @@ Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, 
 ---
 
 ## How to use
+
+
+### Add your recordings and arrange clips
+
 Start by adding your recordings, it can be one large file or multiple smaller ones:
 
 Link to gif scene 0...
 
 
+### Set Master Clock
+
 After that, set the master clock and move the clips using the Move function. 
 
 [See how](https://i.imgur.com/2u7YDm0.gif)
 
-### Add your recordings
-
-Detailed information or points related to Subsection 2.1.
-
-... and so on.
-
-
-### Arrange Clips
-
-Detailed information or points related to Subsection 2.1.
-
-... and so on.
-
-### Set Master Clock
-
-Detailed information or points related to Subsection 2.1.
-
-... and so on.
-
 ### Set Cuts - annotation
 
-Detailed information or points related to Subsection 2.1.
-
-... and so on.
+Press the Calibration or Scene button
 
 ### Create ffmpeg script and run
 
-Detailed information or points related to Subsection 2.1.
+Remember to save the .blend file in the same directory as the video clips, then press the Create FFMPEG button. 
+This creates a .bat file with the same file name as the blend file. Open it in the same directory as the clips and blend file. 
 
-... and so on.
+The .bat file uses ffmpeg to cut out the right portions of the video clips and copies them to a new project folder. 
+
 ---
 
 ---
