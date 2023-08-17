@@ -39,13 +39,12 @@ Detailed information or points related to Subsection 1.2.
 
 Install addon in blender: 
 Blender -> Edit -> Preferences -> Add-ons -> Install -> Find zip file and enable (the left check box)
-
 Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, see MoveMatch tab
 ---
 
 ## How to use
 Start by adding your recordings, it can be one large file or multiple smaller ones:
-(https://i.imgur.com/kIuboa7.gifv)
+![First step](https://i.imgur.com/kIuboa7.gifv)
 Brief introduction or summary of what this chapter discusses.
 
 ### Add your recordings
