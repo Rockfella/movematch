@@ -45,7 +45,7 @@ Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, 
 ## How to use
 Start by adding your recordings, it can be one large file or multiple smaller ones:
 
-![First step](https://i.imgur.com/2u7YDm0.gif)
+![First step](https://media.imgur.com/2u7YDm0.gif)
 
 
 ### Add your recordings
