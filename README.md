@@ -51,6 +51,8 @@ Start by adding your recordings, it can be one large file or multiple smaller on
 
 [See how](https://i.imgur.com/ssB1Rv3.gif)
 
+IF YOU EXPERIENCE LAG WHEN ADDING MULTIPLE CLIPS, PLEASE TOGGLE "n" INSIDE THE PREVIEW WINDOW. VIEW -> USE PROXIES -> PROXY RENDER 25%-50%
+
 
 ### Set Master Clock
 
