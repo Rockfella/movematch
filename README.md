@@ -7,7 +7,7 @@ MoveMatch is an addon designed for Blender that facilitates the synchronization 
 ## Table of Contents
 
 1. [Installation](#Installation)
-2. [How to use](#How to use)
+2. [How to use](#How-to-use)
 3. [Concluding Remarks](#Concluding-Remarks)
 4. [License](#License)
 
@@ -45,8 +45,12 @@ Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, 
 ## How to use
 Start by adding your recordings, it can be one large file or multiple smaller ones:
 
+Link to gif scene 0...
 
-<img src="https://i.imgur.com/2u7YDm0.gif" width="400" height="400" />
+
+After that, set the master clock and move the clips using the Move function. 
+
+[See how](https://i.imgur.com/2u7YDm0.gif)
 
 ### Add your recordings
 
