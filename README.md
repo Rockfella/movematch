@@ -33,13 +33,13 @@ Detailed information or points related to Subsection 1.2.
 
 
 ### MoveMatch - blender addon
-
-
-[Download this addon: ](https://github.com/Rockfella/movematch/archive/refs/heads/main.zip)
-
 Install addon in blender: 
 Blender -> Edit -> Preferences -> Add-ons -> Install -> Find zip file and enable (the left check box)
 Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, see MoveMatch tab
+
+[Download this addon](https://github.com/Rockfella/movematch/archive/refs/heads/main.zip)
+
+
 ---
 
 ## How to use
