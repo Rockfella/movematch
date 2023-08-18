@@ -70,6 +70,8 @@ class MM_PT_Panel(Panel):
         
         # layout.operator("myaddon.round_fps_button_operator")
         layout.operator("movematch.master_button_operator")
+        layout.label(text="Time format HH:MM:SS:FF, FF = Frames")
+        
         layout.prop(context.scene, "mm_master_time", text="Time",
                     expand=True)
         scene = bpy.context.scene

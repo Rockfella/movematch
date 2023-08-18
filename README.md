@@ -43,7 +43,9 @@ Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, 
 ---
 
 ## How to use
-
+Before you get started there a few things that are important. Make sure that the video files does not have any special caracters in their name. 
+When you are selecting the "master time" and "move time" be sure to select the frame where the second is changeing. If timer is used, remember that there is milliseconds in the end the input 00:00:00:00,
+is format HH:MM:SS:FF where FF is frames. SO if you pick the "second change" make sure to have FF = 00. 
 
 ### Add your recordings and arrange clips
 
