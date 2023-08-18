@@ -16,8 +16,7 @@ def frame_from_smpte(smpte_timecode: str, fps=None, fps_base=None) -> int:
     seconds = int(timecode_parts[2])
     frames = int(timecode_parts[3])
 
-    # print("FPS_REAL")
-    # print(fps_real)
+    
 
     hours_seconds_frames = ((hours * 60) * 60) * fps_real
     minutes_seconds_frames = (minutes * 60) * fps_real

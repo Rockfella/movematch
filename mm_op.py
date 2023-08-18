@@ -449,79 +449,142 @@ def calculate_execute_the_strip_move(self, context, justcalc):
     # Get the marker that is placed over the strip within its range and consider this the "orginin" frame
     for marker in markers:
         if seq_editor.active_strip.frame_final_start <= marker.frame <= seq_editor.active_strip.frame_final_end:
+            
             # Projected frames from master clock
             int_master_frame = bpy.data.scenes[bpy.context.scene.name].mm_master_time_frame
             str_master_time = bpy.data.scenes[bpy.context.scene.name].mm_master_time
             str_master_time_adaption = bpy.data.scenes[bpy.context.scene.name].mm_master_time_adaption
-            int_frame_from_master_clock = frame_from_smpte(str_master_time)
-            markers_frame = marker.frame
-
-            int_adapted_time_frame = frame_from_smpte(
-                str_master_time_adaption)
-
-
             
-            str_smtp_at_zero = bpy.utils.smpte_from_frame(
-                (0 + int_frame_from_master_clock - int_master_frame))
-            
-            print("")
-            print("")
-            print("")
-            int_frames_at_zero = frame_from_smpte(str_smtp_at_zero)
-            print("Where is the master clock zero time?")
-            print(int_frames_at_zero)
-         
-            int_move_strip_frames = int_adapted_time_frame - int_frames_at_zero
-            
-            
-            the_frame_change = markers_frame - int_move_strip_frames
-            print("Where is the markerframe?")
-            print(markers_frame)
 
-            if markers_frame > int_frames_at_zero:
-                print("The marker is positive from master clock zero")
-                print(markers_frame - int_frames_at_zero)
-                print("I want the marker to end up at: ",
-                      int_adapted_time_frame + int_frames_at_zero)
-                print("The difference between the marker and the strip_start = ",
-                      seq_editor.active_strip.frame_start - markers_frame)
-               
-                the_frame_change = (int_adapted_time_frame + int_frames_at_zero) - abs(seq_editor.active_strip.frame_start - markers_frame)
-
-            elif markers_frame < int_frames_at_zero:
-                print("The marker is negative from master clock zero")
-                print(markers_frame - int_frames_at_zero)
-                print("I want the marker to end up at: ",
-                      int_adapted_time_frame + int_frames_at_zero)
-                print("The difference between the marker and the strip_start = ", 
-                      seq_editor.active_strip.frame_start - markers_frame)
+            ################################
+            # If timer is used 00:00:00:10 #
+            ################################
+            if str_master_time.startswith("00:00"):
                 
-                the_frame_change = (int_adapted_time_frame + int_frames_at_zero) - abs(seq_editor.active_strip.frame_start - markers_frame)
 
-            
-            # Sends back a bool if the function only wanted to provide if the move is negative, see difference at def invoke
-            if justcalc:
-                if the_frame_change > 0:
-                    return True
-                else:
-                    return False
 
-            if the_frame_change < 0:
-                seq_editor.active_strip.frame_start = the_frame_change
-                bpy.context.scene.timeline_markers.remove(
-                    bpy.context.scene.timeline_markers[marker.name])
-                bpy.context.window.scene.frame_current = round(
-                    int_move_strip_frames)
-            elif the_frame_change > 0:
-                seq_editor.active_strip.frame_start = the_frame_change
-                bpy.context.scene.timeline_markers.remove(
-                    bpy.context.scene.timeline_markers[marker.name])
-                bpy.context.window.scene.frame_current = round(
-                    int_move_strip_frames)
-            elif the_frame_change == 0:
-                return {'FINISHED'}
-            # Break to avoid it finding more markers and doing the loop again
-            break
+                int_frame_from_master_clock = frame_from_smpte(str_master_time)
+                markers_frame = marker.frame
+
+                int_adapted_time_frame = frame_from_smpte(
+                    str_master_time_adaption)
+
+
+
+                str_smtp_at_zero = bpy.utils.smpte_from_frame(
+                    (0 + int_frame_from_master_clock - int_master_frame))
+
+                print("int_frame_from_master_clock")
+                print(int_frame_from_master_clock)
+                print("")
+                print("")
+                int_frames_at_zero = frame_from_smpte(str_smtp_at_zero)
+                print("Where is the master clock zero time?")
+                print(int_frames_at_zero)
+         
+                int_move_strip_frames = int_adapted_time_frame - int_frames_at_zero
+
+
+                the_frame_change = markers_frame - int_move_strip_frames
+                print("Where is the markerframe?")
+                print(markers_frame)
+
+                if markers_frame > int_frames_at_zero:
+                    print("The marker is positive from master clock zero")
+                    print(markers_frame - int_frames_at_zero)
+                    print("I want the marker to end up at: ",
+                          int_adapted_time_frame + int_frames_at_zero)
+                    print("The difference between the marker and the strip_start = ",
+                          seq_editor.active_strip.frame_start - markers_frame)
+
+                    the_frame_change = (int_adapted_time_frame + int_frames_at_zero) - abs(seq_editor.active_strip.frame_start - markers_frame)
+
+                elif markers_frame < int_frames_at_zero:
+                    print("The marker is negative from master clock zero")
+                    print(markers_frame - int_frames_at_zero)
+                    print("I want the marker to end up at: ",
+                          int_adapted_time_frame + int_frames_at_zero)
+                    print("The difference between the marker and the strip_start = ", 
+                          seq_editor.active_strip.frame_start - markers_frame)
+
+                    the_frame_change = (int_adapted_time_frame + int_frames_at_zero) - abs(seq_editor.active_strip.frame_start - markers_frame)
+
+
+                # Sends back a bool if the function only wanted to provide if the move is negative, see difference at def invoke
+                if justcalc:
+                    if the_frame_change > 0:
+                        return True
+                    else:
+                        return False
+
+                if the_frame_change < 0:
+                    seq_editor.active_strip.frame_start = the_frame_change
+                    bpy.context.scene.timeline_markers.remove(
+                        bpy.context.scene.timeline_markers[marker.name])
+                    bpy.context.window.scene.frame_current = round(
+                        int_move_strip_frames)
+                elif the_frame_change > 0:
+                    seq_editor.active_strip.frame_start = the_frame_change
+                    bpy.context.scene.timeline_markers.remove(
+                        bpy.context.scene.timeline_markers[marker.name])
+                    bpy.context.window.scene.frame_current = round(
+                        int_move_strip_frames)
+                elif the_frame_change == 0:
+                    return {'FINISHED'}
+                # Break to avoid it finding more markers and doing the loop again
+                break
+
+            ################################
+            # If TIME is used 09:30:13:10  #
+            ################################
+
+            else:
+                
+                # Projected frames from master clock
+                calc_master_frame = bpy.data.scenes[bpy.context.scene.name].mm_master_time_frame
+                calc_master_time = bpy.data.scenes[bpy.context.scene.name].mm_master_time
+                calc_master_time_adaption = bpy.data.scenes[bpy.context.scene.name].mm_master_time_adaption
+                frames_from_master_clock = frame_from_smpte(calc_master_time)
+                initial_frame = marker.frame
+
+                frame_from_time_pusher = frame_from_smpte(
+                    calc_master_time_adaption)
+
+                smtp_at_zero = bpy.utils.smpte_from_frame(
+                    (0 + frames_from_master_clock - calc_master_frame))
+
+                
+                frames_at_zero = frame_from_smpte(smtp_at_zero)
+
+                actual_time_frame_from_pusher = frame_from_time_pusher - frames_at_zero
+
+                the_frame_change = initial_frame - actual_time_frame_from_pusher
+
+                # Sends back a bool if the function only wanted to provide if the move is negative, see difference at def invoke
+                if justcalc:
+                    if the_frame_change > 0:
+                        return True
+                    else:
+                        return False
+
+                if the_frame_change < 0:
+                    seq_editor.active_strip.frame_start += abs(
+                        the_frame_change)
+                    bpy.context.scene.timeline_markers.remove(
+                        bpy.context.scene.timeline_markers[marker.name])
+                    bpy.context.window.scene.frame_current = round(
+                        actual_time_frame_from_pusher)
+                elif the_frame_change > 0:
+                    seq_editor.active_strip.frame_start -= abs(
+                        the_frame_change)
+                    bpy.context.scene.timeline_markers.remove(
+                        bpy.context.scene.timeline_markers[marker.name])
+                    bpy.context.window.scene.frame_current = round(
+                        actual_time_frame_from_pusher)
+                elif the_frame_change == 0:
+                    return {'FINISHED'}
+                # Break to avoid it finding more markers and doing the loop again
+                break
 
 
 def frame_to_time(frame, fps):
