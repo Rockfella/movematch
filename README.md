@@ -56,9 +56,9 @@ ProjectX <br>
 -ProjectX.blend <br>
 -"ProjectX.bat" - is created when done, open it and run <br>
 -"ProjectX folder" <br>
--@Calibration <br>
--@Scene_1 <br>
--@Scene_2 etc..
+    -@Calibration <br>
+    -@Scene_1 <br>
+    -@Scene_2 etc..
 
 When you are selecting the "master time" and "move time" be sure to select the frame where the second is changeing. If timer is used, remember that there is milliseconds in the end the input 00:00:00:00,
 is format HH:MM:SS:FF where FF is frames. SO if you pick the "second change" make sure to have FF = 00. 
