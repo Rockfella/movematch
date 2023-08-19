@@ -45,19 +45,19 @@ Under Video Sequencer - New File - Video Editing -> Sequencer toggle "n" panel, 
 ## How to use
 Before you get started there a few things that are important. Make sure that the video files does not have any special caracters in their name. 
 
-Basic folder structure:
-ProjectX
--Cam1_Footage.mp4
--Cam2_Footage.mp4
--Cam3_Footage.mp4
--Cam4_Footage.mp4
--Cam5_Footage.mp4
--Cam6_Footage.mp4
--ProjectX.blend
--"ProjectX.bat" - is created when done, open it and run
--"ProjectX folder"
--@Calibration
--@Scene_1
+Basic folder structure: <br>
+ProjectX <br>
+-Cam1_Footage.mp4 <br>
+-Cam2_Footage.mp4 <br>
+-Cam3_Footage.mp4 <br>
+-Cam4_Footage.mp4 <br>
+-Cam5_Footage.mp4 <br>
+-Cam6_Footage.mp4 <br>
+-ProjectX.blend <br>
+-"ProjectX.bat" - is created when done, open it and run <br>
+-"ProjectX folder" <br>
+-@Calibration <br>
+-@Scene_1 <br>
 -@Scene_2 etc..
 
 When you are selecting the "master time" and "move time" be sure to select the frame where the second is changeing. If timer is used, remember that there is milliseconds in the end the input 00:00:00:00,
