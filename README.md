@@ -47,18 +47,18 @@ Before you get started there a few things that are important. Make sure that the
 
 Basic folder structure:
 ProjectX
-    -Cam1_Footage.mp4
-    -Cam2_Footage.mp4
-    -Cam3_Footage.mp4
-    -Cam4_Footage.mp4
-    -Cam5_Footage.mp4
-    -Cam6_Footage.mp4
-    -ProjectX.blend
-    -"ProjectX.bat" - is created when done, open it and run
-    -"ProjectX folder"
-        -@Calibration
-        -@Scene_1
-        -@Scene_2 etc..
+-Cam1_Footage.mp4
+-Cam2_Footage.mp4
+-Cam3_Footage.mp4
+-Cam4_Footage.mp4
+-Cam5_Footage.mp4
+-Cam6_Footage.mp4
+-ProjectX.blend
+-"ProjectX.bat" - is created when done, open it and run
+-"ProjectX folder"
+-@Calibration
+-@Scene_1
+-@Scene_2 etc..
 
 When you are selecting the "master time" and "move time" be sure to select the frame where the second is changeing. If timer is used, remember that there is milliseconds in the end the input 00:00:00:00,
 is format HH:MM:SS:FF where FF is frames. SO if you pick the "second change" make sure to have FF = 00. 
